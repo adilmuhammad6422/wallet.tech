@@ -3,7 +3,7 @@
 
 # To-do list
 - Home page
-- Login page (with a working login feature) -> (https://www.youtube.com/watch?v=Y-XW9m8qOis) tutorial on how to do this
+- Login page (with a working login feature) -> (https://www.youtube.com/watch?v=adMD46G5BXU) tutorial on how to do this
 - Get started (ask user what school they go to, how much money they can spend for the semester, swipes etc)
 - whatever company tracks we can add
 
