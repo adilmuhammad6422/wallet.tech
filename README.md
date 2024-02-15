@@ -2,7 +2,7 @@
 
 
 # To-do list
-- Home page
+- Home page -> (https://www.youtube.com/watch?v=ZU-drSVodBw) good home page we can use
 - Login page (with a working login feature) -> (https://www.youtube.com/watch?v=ot_tXO4xqo4) tutorial on how to do this
 - Get started (ask user what school they go to, how much money they can spend for the semester, swipes etc) (we can ask the user what school they go to via login page)
 - whatever company tracks we can add
