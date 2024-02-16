@@ -39,7 +39,7 @@ function App() {
             gridTemplateColumns: "repeat(auto-fill, minmax(300px, 1fr))",
             gap: "1rem",
             alignItems: "flex-start",
-          }}
+          }}//hELLO
         >
           {budgets.map(budget => {
             const amount = getBudgetExpenses(budget.id).reduce(
