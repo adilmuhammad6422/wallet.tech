@@ -30,7 +30,7 @@ function App() {
             Add Budget
           </Button>
           <Button variant="outline-primary" onClick={openAddExpenseModal}> 
-            Add Expense 2
+            Add Expense
           </Button>
         </Stack>
         <div
