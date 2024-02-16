@@ -29,8 +29,8 @@ function App() {
           <Button variant="primary" onClick={() => setShowAddBudgetModal(true)}>
             Add Budget
           </Button>
-          <Button variant="outline-primary" onClick={openAddExpenseModal}>
-            Add Expense
+          <Button variant="outline-primary" onClick={openAddExpenseModal}> 
+            Add Expense 2
           </Button>
         </Stack>
         <div
