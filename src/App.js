@@ -9,8 +9,12 @@ function App() {
     <Router>
       <Navbar />
       <Routes>
-        <Route path="/" element={<Hero />} />
-        <Route path="/budget" element={<BudgetPage />} />
+      <Route path="/" element={
+      <>
+        <Hero />
+      </>
+      }/>
+      <Route path="/budget" element={<BudgetPage />} />
       </Routes>
     </Router>
   );
