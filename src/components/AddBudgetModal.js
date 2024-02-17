@@ -1,16 +1,20 @@
 import { Form, Modal, Button } from "react-bootstrap"
-import { useRef } from "react"
+import { useRef, useState } from "react"
 import { useBudgets } from "../contexts/BudgetsContext"
 
 export default function AddBudgetModal({ show, handleClose }) {
   const nameRef = useRef()
   const maxRef = useRef()
+  const [isSwipe, setIsSwipe] = useState(false) // State to track if the budget is for swipes
+
   const { addBudget } = useBudgets()
+
   function handleSubmit(e) {
     e.preventDefault()
     addBudget({
       name: nameRef.current.value,
       max: parseFloat(maxRef.current.value),
+      isSwipe, // Include the isSwipe state in the budget object
     })
     handleClose()
   }
@@ -33,8 +37,16 @@ export default function AddBudgetModal({ show, handleClose }) {
               type="number"
               required
               min={0}
-              step={0.01}
+              step="0.01"
             />
+          </Form.Group>
+          {/* Checkbox to indicate if the budget is for swipes */}
+          <Form.Group className="mb-3" controlId="isSwipe">
+            <Form.Check 
+              type="checkbox" 
+              label="Is this budget for swipes?" 
+              checked={isSwipe} 
+              onChange={(e) => setIsSwipe(e.target.checked)} />
           </Form.Group>
           <div className="d-flex justify-content-end">
             <Button variant="primary" type="submit">

@@ -22,14 +22,15 @@ export const BudgetsProvider = ({ children }) => {
       return [...prevExpenses, { id: uuidV4(), description, amount, budgetId }]
     })
   }
-  function addBudget({ name, max }) {
+  function addBudget({ name, max, isSwipe = false }) {
     setBudgets(prevBudgets => {
       if (prevBudgets.find(budget => budget.name === name)) {
-        return prevBudgets
+        return prevBudgets;
       }
-      return [...prevBudgets, { id: uuidV4(), name, max }]
-    })
+      return [...prevBudgets, { id: uuidV4(), name, max, isSwipe }];
+    });
   }
+  
   function deleteBudget({ id }) {
     setExpenses(prevExpenses => {
       return prevExpenses.map(expense => {

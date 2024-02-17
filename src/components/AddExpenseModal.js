@@ -9,6 +9,7 @@ export default function AddExpenseModal({
 }) {
   const descriptionRef = useRef()
   const amountRef = useRef()
+  const swipesRef = useRef()
   const budgetIdRef = useRef()
   const { addExpense, budgets } = useBudgets()
 
