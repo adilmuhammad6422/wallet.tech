@@ -3,7 +3,7 @@ import Typed from 'react-typed';
 
 const Hero = () => {
   return (
-    <div className='text-white'>
+    <div className='text-black'>
       <div className='max-w-[800px] mt-[-96px] w-full h-screen mx-auto text-center flex flex-col justify-center'>
         <p className='text-[#00df9a] font-bold p-2'>
           LEARN FINANCIAL RESPONSIBILITY
@@ -17,7 +17,7 @@ const Hero = () => {
           </p>
           <Typed
           className='md:text-5xl sm:text-4xl text-xl font-bold md:pl-4 pl-2'
-            strings={['Monthly Budget', 'Meal Swipes', 'Flex Dollars']}
+            strings={['Monthly Budget.', 'Meal Swipes.', 'Flex Dollars.']}
             typeSpeed={120}
             backSpeed={140}
             loop
