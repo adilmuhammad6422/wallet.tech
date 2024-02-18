@@ -1,7 +1,10 @@
 import React from 'react';
 import Typed from 'react-typed';
+import { useNavigate } from 'react-router-dom'; // Import useNavigate
 
 const Hero = () => {
+  const navigate = useNavigate(); // Initialize useNavigate hook
+
   return (
     <div className='text-black'>
       <div className='max-w-[800px] mt-[-96px] w-full h-screen mx-auto text-center flex flex-col justify-center'>
@@ -16,7 +19,7 @@ const Hero = () => {
             Plan your 
           </p>
           <Typed
-          className='md:text-5xl sm:text-4xl text-xl font-bold md:pl-4 pl-2'
+            className='md:text-5xl sm:text-4xl text-xl font-bold md:pl-4 pl-2'
             strings={['Monthly Budget.', 'Meal Swipes.', 'Flex Dollars.']}
             typeSpeed={120}
             backSpeed={140}
@@ -24,7 +27,12 @@ const Hero = () => {
           />
         </div>
         <p className='md:text-2xl text-xl font-bold text-gray-500'>Track your budget and make smart money moves.</p>
-        <button className='bg-[#00df9a] w-[200px] rounded-md font-medium my-6 mx-auto py-3 text-black'>Get Started</button>
+        <button
+          className='bg-[#00df9a] w-[200px] rounded-md font-medium my-6 mx-auto py-3 text-black'
+          onClick={() => navigate('/login')} // Use navigate to change the route
+        >
+          Get Started
+        </button>
       </div>
     </div>
   );

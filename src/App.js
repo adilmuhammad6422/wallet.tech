@@ -2,19 +2,26 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
-import BudgetPage from './components/BudgetModel'; // Ensure this component is created based on your provided logic
+import BudgetPage from './components/BudgetModel'; // Ensure this component is correctly named based on your file structure
+import Login from './components/login'; // Assuming this is the correct path to your Login component
 
 function App() {
   return (
     <Router>
-      <Navbar />
       <Routes>
-      <Route path="/" element={
-      <>
-        <Hero />
-      </>
-      }/>
-      <Route path="/budget" element={<BudgetPage />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/" element={
+          <>
+            <Navbar />
+            <Hero />
+          </>
+        } />
+        <Route path="/budget" element={
+          <>
+            <Navbar />
+            <BudgetPage />
+          </>
+        } />
       </Routes>
     </Router>
   );
