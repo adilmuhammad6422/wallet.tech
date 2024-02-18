@@ -14,6 +14,7 @@ function App() {
   const [showAddExpenseModal, setShowAddExpenseModal] = useState(false);
   const [viewExpensesModalBudgetId, setViewExpensesModalBudgetId] = useState();
   const [addExpenseModalBudgetId, setAddExpenseModalBudgetId] = useState();
+  const [showSwipesTotal, setShowSwipesTotal] = useState(false);
   const { budgets, getBudgetExpenses } = useBudgets();
 
   // State for totals
@@ -92,9 +93,10 @@ function App() {
           />
           <TotalBudgetCard
             name="Total"
-            amount={totalSpent.toFixed(2)}
-            max={totalMax.toFixed(2)}
-            isSwipe={false}
+            amount={showSwipesTotal ? totalSpentOnSwipes.toFixed(2) : totalSpent.toFixed(2)}
+            max={showSwipesTotal ? totalSwipesMax.toFixed(2) : totalMax.toFixed(2)}
+            isSwipe={showSwipesTotal}
+            onToggleShowSwipes={() => setShowSwipesTotal(!showSwipesTotal)}
           />
         </div>
       </Container>

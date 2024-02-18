@@ -3,9 +3,8 @@ import React, {useState} from 'react'
 function Login(){
 
     const[isHovered, setIsHovered] = useState(false);
-    const[email, setEmail] = useState(false);
-    const[password, setPassword] = useState(false);
-
+    const[email, setEmail] = useState('');
+    const[password, setPassword] = useState('');
 
     const containerStyle = {
         display: 'flex',
@@ -20,16 +19,26 @@ function Login(){
         borderRadius: '10px',
         boxShadow: '2px 2px 8px rgba(0,0,0,0.9)',
         width: '300px',
-        backgroundColor: '#fffF'
+        backgroundColor: '#fff',
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center', // Center the title and form
+    };
+
+    const titleStyle = {
+        margin: '0 0 20px 0', // Add some margin to the bottom of the title
+        fontWeight: 'bold',
+        fontSize: '24px', // Larger font size for the title
+        color: '#333', // Dark color for better readability
     };
 
     const formStyle = {
         display: 'flex',
-        flexDirection: 'column'
+        flexDirection: 'column',
+        width: '100%', // Ensure the form uses the full width of the box
     };
 
     const inputStyle = {
-        display: 'flex',
         margin: '10px 0',
         padding: '10px',
         borderRadius: '5px',
@@ -47,15 +56,18 @@ function Login(){
         cursor: 'pointer',
         boxShadow: isHovered ? '0 5px 15px rgba(0,0,0,0.7)' : '0 2px 5px rgba(0,0,0,0.2)',
         transform: isHovered ? 'translateY(-2px)' : 'translateY(0px)',
+        width: '90%', // Match the width of the input fields
     };
 
     function handleSubmit(event){
         event.preventDefault();
+        // Here, you would handle the form submission, such as validating the input and potentially signing the user in or redirecting them.
     }
 
     return (
         <div style={containerStyle}>
             <div style={boxStyle}>
+                <div style={titleStyle}>Sign In / Sign Up</div>
                 <form onSubmit={handleSubmit} style={formStyle}>
                     <div>
                         <label htmlFor="email">Email </label>
@@ -75,4 +87,4 @@ function Login(){
     )
 }
 
-export default Login
+export default Login;

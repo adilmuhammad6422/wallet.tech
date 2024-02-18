@@ -5,3 +5,29 @@
 body {
   background-color: #ffffff;
 }
+
+/* Custom button style */
+.blue-outline-button {
+  color: #007bff; /* Bootstrap's primary blue color */
+  background-color: #ffffff; /* White background */
+  border: 2px solid #007bff; /* Blue border */
+  border-radius: 0.25rem; /* Rounded border, 4px as an example */
+  padding: 0.375rem 0.75rem; /* Bootstrap's default padding for buttons */
+  font-size: 1rem; /* Default size */
+  line-height: 1.5; /* Default line-height */
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out; /* Smooth transition for hover effects */
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.05); /* Subtle shadow */
+}
+
+.blue-outline-button:hover {
+  color: #ffffff; /* White text for hover */
+  background-color: #007bff; /* Blue background for hover */
+  border-color: #0056b3; /* Darker blue border for hover */
+  text-decoration: none; /* No underline on hover */
+}
+
+.blue-outline-button:focus, .blue-outline-button.focus {
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25); /* Bootstrap's focus shadow */
+}
+
+/* Optionally: if you're using a focus outline like in Bootstrap, you may want to include the :focus styles too */
