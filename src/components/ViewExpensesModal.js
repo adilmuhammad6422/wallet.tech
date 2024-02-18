@@ -13,7 +13,7 @@ export default function ViewExpensesModal({ budgetId, handleClose }) {
 
   // Function to format expense display
   const formatExpenseDisplay = (expense) => {
-    return expense.isSwipe ? `${expense.amount} Swipes` : currencyFormatter.format(expense.amount,);
+    return expense.isSwipe ? `${expense.amount} Swipes` : `$ ${expense.amount}`;
   };
 
   return (

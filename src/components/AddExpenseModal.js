@@ -1,26 +1,23 @@
-import { Form, Modal, Button } from "react-bootstrap"
-import { useRef } from "react"
-import { useBudgets, UNCATEGORIZED_BUDGET_ID } from "../contexts/BudgetsContext"
+import React, { useRef, useState } from 'react';
+import { Form, Modal, Button } from 'react-bootstrap';
+import { useBudgets, UNCATEGORIZED_BUDGET_ID } from '../contexts/BudgetsContext';
 
-export default function AddExpenseModal({
-  show,
-  handleClose,
-  defaultBudgetId,
-}) {
-  const descriptionRef = useRef()
-  const amountRef = useRef()
-  const swipesRef = useRef()
-  const budgetIdRef = useRef()
-  const { addExpense, budgets } = useBudgets()
+export default function AddExpenseModal({ show, handleClose, defaultBudgetId }) {
+  const descriptionRef = useRef();
+  const amountRef = useRef();
+  const budgetIdRef = useRef();
+  const [isSwipe, setIsSwipe] = useState(false); // Added state for swipe toggle
+  const { addExpense, budgets } = useBudgets();
 
   function handleSubmit(e) {
-    e.preventDefault()
+    e.preventDefault();
     addExpense({
       description: descriptionRef.current.value,
       amount: parseFloat(amountRef.current.value),
       budgetId: budgetIdRef.current.value,
-    })
-    handleClose()
+      isSwipe, // Include the isSwipe state in the expense object
+    });
+    handleClose();
   }
 
   return (
@@ -41,12 +38,13 @@ export default function AddExpenseModal({
               type="number"
               required
               min={0}
-              step={0.01}
+              step="0.01"
             />
           </Form.Group>
           <Form.Group className="mb-3" controlId="budgetId">
             <Form.Label>Budget</Form.Label>
-            <Form.Select defaultValue={defaultBudgetId} ref={budgetIdRef}>
+            <Form.Select defaultValue={defaultBudgetId || UNCATEGORIZED_BUDGET_ID} ref={budgetIdRef}>
+              <option value={UNCATEGORIZED_BUDGET_ID}>Uncategorized</option>
               {budgets.map(budget => (
                 <option key={budget.id} value={budget.id}>
                   {budget.name}
@@ -54,13 +52,21 @@ export default function AddExpenseModal({
               ))}
             </Form.Select>
           </Form.Group>
+          <Form.Group className="mb-3" controlId="isSwipe">
+            <Form.Check 
+              type="checkbox" 
+              label="Is this a swipe expense?" 
+              checked={isSwipe}
+              onChange={(e) => setIsSwipe(e.target.checked)}
+            />
+          </Form.Group>
           <div className="d-flex justify-content-end">
-            <Button variant="primary-outline" type="submit">
+            <Button variant="primary" type="submit">
               Add
             </Button>
           </div>
         </Modal.Body>
       </Form>
     </Modal>
-  )
+  );
 }
