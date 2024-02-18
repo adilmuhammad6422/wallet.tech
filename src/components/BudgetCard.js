@@ -24,11 +24,11 @@ export default function BudgetCard({
 
   // Function to decide how to display amounts
   const formatAmountDisplay = (amount, max, isSwipe) => {
-    if (isSwipe) {
-      return `${amount} / ${max} Swipes`; // Display as swipes
+    if (!isSwipe) {
+      return `$${amount} / $${max}`; // Display as swipes
     } else {
       // Display as currency
-      return `${currencyFormatter.format(amount)} / ${currencyFormatter.format(max)}`;
+      return `${amount} / ${max} Swipes`;
     }
   };
 
