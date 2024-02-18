@@ -8,6 +8,7 @@ body {
 
 /* Custom button style */
 .blue-outline-button {
+  margin-top: 1rem; /* Adjust the value as needed */
   color: #007bff; /* Bootstrap's primary blue color */
   background-color: #ffffff; /* White background */
   border: 2px solid #007bff; /* Blue border */
@@ -17,7 +18,12 @@ body {
   line-height: 1.5; /* Default line-height */
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out; /* Smooth transition for hover effects */
   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.05); /* Subtle shadow */
+  display: block; /* To apply margin properly */
+  width: fit-content; /* Make the button width only as wide as its content */
+  margin-left: auto; /* Center align the button if desired */
+  margin-right: auto; /* Center align the button if desired */
 }
+
 
 .blue-outline-button:hover {
   color: #ffffff; /* White text for hover */

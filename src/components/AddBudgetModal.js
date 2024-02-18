@@ -49,7 +49,7 @@ export default function AddBudgetModal({ show, handleClose }) {
               onChange={(e) => setIsSwipe(e.target.checked)} />
           </Form.Group>
           <div className="d-flex justify-content-end">
-            <Button variant="primary" type="submit">
+            <Button variant="primary-outline" type="submit">
               Add
             </Button>
           </div>
