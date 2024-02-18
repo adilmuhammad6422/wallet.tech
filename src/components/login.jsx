@@ -88,13 +88,12 @@ function Login(){
         }
         
         try {
-            const response = await axios.post("http://your-api-endpoint.com/login", { email, password });
-            console.log(response);
+            const response = await axios.get("http://ec2-52-90-36-88.compute-1.amazonaws.com", {email, password});
             setLoginStatus('Login Successful'); // Display login success message immediately
             setTimeout(() => navigate('/budget'), 2000); // Navigate after 2 seconds
         } catch (error) {
-            setLoginStatus('Login Successful'); // Display login success message immediately
-            setTimeout(() => navigate('/budget'), 2000); // Navigate after 2 seconds
+            setLoginStatus('Login fail'); // Display login success message immediately
+            // setTimeout(() => navigate('/budget'), 2000); // Navigate after 2 seconds
             // console.log(error);
             // setLoginStatus('Login Failed'); // Display error message
         }
