@@ -1,4 +1,5 @@
 import React, {useState} from 'react'
+import axios from 'axios'
 
 function Login(){
 
@@ -61,7 +62,9 @@ function Login(){
 
     function handleSubmit(event){
         event.preventDefault();
-        // Here, you would handle the form submission, such as validating the input and potentially signing the user in or redirecting them.
+        axios.post("http://wallet-tech-db.czcssyw8u2fq.us-east-1.rds.amazonaws.com", {email, password})
+        .then(res => console.log(res))
+        .catch(err => console.log(err));
     }
 
     return (
